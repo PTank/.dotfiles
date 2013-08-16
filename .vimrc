@@ -28,20 +28,20 @@ function s:filetype ()
 
 	let s:file = expand("<afile>:t")
 	if match (s:file, "\.sh$") != -1
-		let s:first = "##################################"
+		let s:first = "#" . "!" . system ("whereis -b bash | awk '{print $2}' | tr -d '\n'")
 		let s:comment = "#"
 		let s:end = "##################################"
-		let s:type = s:comment . "!" . system ("whereis -b bash | awk '{print $2}' | tr -d '\n'")
+		let s:type = "##################################"
 	elseif match (s:file, "\.py$") != -1
-		let s:first = "##################################"
+		let s:first = "#" . "!" . system ("whereis -b python | awk '{print $2}' | tr -d '\n'")
 		let s:comment = "#"
 		let s:end = "##################################"
-		let s:type = s:comment . "!" . system ("whereis -b python | awk '{print $2}' | tr -d '\n'")
+		let s:type = "##################################"
 	elseif match (s:file, "\.pl$") != -1
-		let s:first = "##################################"
+		let s:first = "#" . "!" . system ("whereis -b perl | awk '{print $2}' | tr -d '\n'")
 		let s:comment = "#"
 		let s:end = "##################################"
-		let s:type = s:comment . "!" . system ("whereis -b perl | awk '{print $2}' | tr -d '\n'")
+		let s:type = "##################################"
 	elseif match (s:file, "\.vim$") != -1
 		let s:first = "\***********************************"
 		let s:comment = "\""
