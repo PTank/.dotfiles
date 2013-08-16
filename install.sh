@@ -35,7 +35,7 @@ then
 	do
 		echo -e "\033[32mCopy $name to Home\033[0m"
 		cmp ~/$name $DIR$name
-		if [ -d $name ]
+		if [ -d ~/$name ]
 		then
 			diff -Naur ~/$name $DIR$name
 		fi	
@@ -46,7 +46,7 @@ then
 		elif [ -e ~/$name ]
 		then
 			echo -e "\033[33mYour old $name are move to backups\033[0m"
-			mv ~/$name backups/
+			mv ~/$name $DIRbackups/
 			ln -s $DIR$name ~/$name
 		else
 			ln -s $DIR$name ~/$name
