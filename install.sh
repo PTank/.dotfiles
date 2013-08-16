@@ -12,6 +12,10 @@ install=(
 	.vimrc
 	.bashrc
 	)
+if	[ ! -d "$DIR"backups ]
+then
+	mkdir "$DIR"backups
+fi
 echo -e "\033[32mWelcome to my dotfile install\033[0m"
 echo -e "\033[32m
 1 - All
