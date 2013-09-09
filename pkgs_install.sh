@@ -8,6 +8,7 @@
 
 packages=(
 	vim-gtk
+	tig
 	)
 if [ $EUID -ne 0 ]
 then
