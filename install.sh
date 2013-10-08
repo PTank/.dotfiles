@@ -7,6 +7,7 @@
 ##################################
 
 DIR=~/.dotfiles/
+FILE=1
 install=(
 	.vim
 	.vimrc
@@ -38,21 +39,23 @@ then
 	for name in ${install[@]}
 	do
 		echo -e "\033[32mCopy $name to Home\033[0m"
-		cmp ~/$name $DIR$name
 		if [ -d ~/$name ]
 		then
 			diff -Naur ~/$name $DIR$name
+		elif [ -e ~/$name ]
+		then
+			cmp ~/$name $DIR$name
+		else
+			ln -s $DIR$name ~/$name
+			FILE=0
 		fi	
-		if [ $? = 0 ]
+		if [ $? = 0 ] && [ $FILE != 0 ]
 		then
 			echo -e "\033[33m$name are same\033[0m"
-
-		elif [ -e ~/$name ]
+		elif [ -e ~/$name ] && [ $FILE != 0 ]
 		then
 			echo -e "\033[33mYour old $name are move to backups\033[0m"
 			mv ~/$name $DIRbackups/
-			ln -s $DIR$name ~/$name
-		else
 			ln -s $DIR$name ~/$name
 		fi
 	done
