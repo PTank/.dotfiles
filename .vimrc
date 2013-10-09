@@ -1,13 +1,17 @@
+" 1 - Basic vim set
 set nocompatible
+set number
+set mouse=a
+set t_Co=256
 
-" Pathogen
+" 2 - Pathogen
 call pathogen#infect()
 call pathogen#helptags()
 
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 filetype plugin indent on
 
-" Nerdtree
+" 3 - Nerdtree
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 let NERDTreeShowBookmarks=1
@@ -19,11 +23,12 @@ let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git','\.hg','\.svn','\.bz
 let NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_gui_startup=0 
 
+" 4 - Color (remove comment for choose color theme)
 set background=dark
 colorscheme jellybeans
+" colorscheme distinguished 
 
-" Auto header source:
-" http://spareware.blogspot.fr/2011/04/script-header-vim.html
+" 5 -Auto header source: http://spareware.blogspot.fr/2011/04/script-header-vim.html
 function s:filetype ()
 
 	let s:file = expand("<afile>:t")
@@ -131,7 +136,3 @@ endfunction
 autocmd BufNewFile * call s:insert ()
 autocmd BufWritePre * call s:update ()
 
-" More More MOOOOOOOORE
-set number
-set mouse=a
-set t_Co=256
