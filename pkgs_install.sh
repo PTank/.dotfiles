@@ -9,6 +9,8 @@
 packages=(
 	vim
 	tig
+	terminator
+	irsii
 	)
 if [ $EUID -ne 0 ]
 then
