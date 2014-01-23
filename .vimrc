@@ -12,7 +12,7 @@ set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 filetype plugin indent on
 
 " 3 - Nerdtree
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 let NERDTreeShowBookmarks=1
 let NERDTreeChDirMode=0
@@ -21,7 +21,8 @@ let NERDTreeMouseMode=2
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git','\.hg','\.svn','\.bzr']
 let NERDTreeKeepTreeInNewTab=1
-let g:nerdtree_tabs_open_on_gui_startup=0 
+let g:nerdtree_tabs_open_on_gui_startup=0
+let NERDTreeIgnore=['.*\.o$', '.*\~$', '.*\.out$', '.*\.so$', '.*\.a$']
 
 " 4 - Color (remove comment for choose color theme)
 set background=dark
@@ -136,3 +137,7 @@ endfunction
 autocmd BufNewFile * call s:insert ()
 autocmd BufWritePre * call s:update ()
 
+" Map
+"
+map <C-t> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
