@@ -10,7 +10,7 @@ packages=(
 	vim
 	tig
 	terminator
-	irsii
+	weechat
 	)
 if [ $EUID -ne 0 ]
 then
