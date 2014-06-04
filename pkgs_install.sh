@@ -11,6 +11,13 @@ packages=(
 	tig
 	terminator
 	weechat
+	curl
+	python
+	python3
+	python-pip
+	libsdl1.2debian
+	libjpeg8 libjpeg8-dev
+	python-dev libjpeg-dev libfreetype6-dev zlib1g-dev
 	)
 if [ $EUID -ne 0 ]
 then
