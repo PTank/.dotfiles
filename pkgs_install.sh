@@ -15,9 +15,12 @@ packages=(
 	python
 	python3
 	python-pip
+	python3-pip
 	libsdl1.2debian
 	libjpeg8 libjpeg8-dev
 	python-dev libjpeg-dev libfreetype6-dev zlib1g-dev
+	g++
+	python-dbus
 	)
 if [ $EUID -ne 0 ]
 then
@@ -30,7 +33,7 @@ echo -e "\033[32mStart install packages\033[0m"
 for name in ${packages[@]}
 do 
 	echo -e "\033[32mInstalling: $name\033[0m"
-	apt-get install $name
+	apt-get install -y $name
 done
 	echo -e "\033[32mAll packages was installed"
 exit 0
