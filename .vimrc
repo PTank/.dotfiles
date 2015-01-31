@@ -1,4 +1,12 @@
+"--------------------------------------------------------------------------------
+"     File Name           :     .vimrc
+"     Created By          :     p-tank
+"     Creation Date       :     [2014-07-23 21:03]
+"     Last Modified       :     [2015-01-31 11:36]
+"     Description         :      
+"--------------------------------------------------------------------------------
 " 1 - Basic set
+
 set number
 set mouse=a
 set t_Co=256
@@ -21,6 +29,10 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'PTank/leek.vim'
+Plugin 'shanzi/autoHEADER'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'helino/vim-nasm'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -35,3 +47,4 @@ nmap	<C-n> :bn<CR>			" next buffer
 nmap	<C-p> :bp<CR>			" previous buffer
 nmap	<F2> :TagbarToggle <CR>		" print Tagbar
 map	<C-t> :NERDTreeToggle<CR>	" NERDtree
+map	<C-h> :AutoHeader<CR>		" AutoHeader
