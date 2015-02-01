@@ -1,4 +1,5 @@
 " 1 - Basic set
+
 set number
 set mouse=a
 set t_Co=256
@@ -22,6 +23,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'PTank/leek.vim'
+Plugin 'helino/vim-nasm'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,3 +39,4 @@ nmap	<C-n> :bn<CR>			" next buffer
 nmap	<C-p> :bp<CR>			" previous buffer
 nmap	<F2> :TagbarToggle <CR>		" print Tagbar
 map	<C-t> :NERDTreeToggle<CR>	" NERDtree
+map	<C-h> :AutoHeader<CR>		" AutoHeader

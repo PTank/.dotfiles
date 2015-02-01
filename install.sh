@@ -9,7 +9,6 @@
 DIR=~/.dotfiles/
 FILE=1
 install=(
-	.vim
 	.vimrc
 	.bashrc
 	)
@@ -17,6 +16,7 @@ if	[ ! -d "$DIR"backups ]
 then
 	mkdir "$DIR"backups
 fi
+
 echo -e "\033[32mWelcome to my dotfile install\033[0m"
 echo -e "\033[32m
 1 - All
@@ -59,6 +59,10 @@ then
 			ln -s $DIR$name ~/$name
 		fi
 	done
+	if [ ! -e ~/.vim/bundle/Vundle.vim ]
+	then
+		git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	fi
 fi
 if [ $data = 3 ]
 then

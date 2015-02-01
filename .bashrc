@@ -1,8 +1,11 @@
 # Alias like I like 
 alias ll='ls -lsGa';
 alias maou='cat -e';
+
+
 # quick gcc flag
-alias comp='gcc -Wall -Werror -Wextra'
+alias c='gcc -Wall -Werror -Wextra'
+alias c++='g++ -Wall -Werror -Wextra'
 
 export WORKON_HOME=~/.virtualenvs
 mkdir -p $WORKON_HOME
