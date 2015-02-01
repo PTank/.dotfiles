@@ -21,6 +21,7 @@ packages=(
 	python-dev libjpeg-dev libfreetype6-dev zlib1g-dev
 	g++
 	python-dbus
+	libpq-dev
 	)
 if [ $EUID -ne 0 ]
 then
