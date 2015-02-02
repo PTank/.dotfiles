@@ -59,11 +59,12 @@ then
 			ln -s $DIR$name ~/$name
 		fi
 	done
-	mkdir -p .vim
-	mkdir -p .vim/bundle
+	if [ ! -d ~/.vim ]; then mkdir -p ~/.vim ;fi
+	if [ ! -d ~/.vim/bundle ]; then mkdir -p ~/.vim/bundle ;fi
 	if [ ! -e ~/.vim/bundle/Vundle.vim ]
 	then
 		git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+		vim +BundleInstall +qall!
 	fi
 fi
 if [ $data = 3 ]
