@@ -56,7 +56,12 @@ then
 		then
 			echo -e "\033[33mYour old $name are move to backups\033[0m"
 			mv ~/$name $DIRbackups/
-			ln -s $DIR$name ~/$name
+			if [ ".bashrc"=$name ]
+			then
+				cp $DIR$name ~/$name
+			else
+				ln -s $DIR$name ~/$name
+			fi
 		fi
 	done
 	if [ ! -d ~/.vim ]; then mkdir -p ~/.vim ;fi
@@ -65,6 +70,11 @@ then
 	then
 		git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 		vim +BundleInstall +qall!
+		cd ~/.vim/spell
+		wget http://ftp.vim.org/vim/runtime/spell/fr.latin1.spl
+		wget http://ftp.vim.org/vim/runtime/spell/fr.latin1.sug
+		wget http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl
+		wget http://ftp.vim.org/vim/runtime/spell/fr.utf-8.sug
 	fi
 fi
 if [ $data = 3 ]

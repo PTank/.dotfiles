@@ -25,6 +25,8 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'PTank/leek.vim'
 Plugin 'helino/vim-nasm'
+Plugin 'nvie/vim-flake8'
+Plugin 'mattn/emmet-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -40,3 +42,10 @@ nmap	<C-p> :bp<CR>			" previous buffer
 nmap	<F2> :TagbarToggle <CR>		" print Tagbar
 map	<C-t> :NERDTreeToggle<CR>	" NERDtree
 map	<C-h> :AutoHeader<CR>		" AutoHeader
+
+map <silent> <F7> "<Esc>:silent setlocal spell! spelllang=en<CR>"
+map <silent> <F6> "<Esc>:silent setlocal spell! spelllang=fr<CR>"
+
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+command Wq :execute ':W' | :q
+command WQ :Wq
