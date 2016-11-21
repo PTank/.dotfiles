@@ -7,6 +7,7 @@ set omnifunc=syntaxcomplete#Complete
 " 2 - configure plugin with vundle
 set nocompatible              " be iMproved, required
 filetype off                  " required
+set tabstop=4
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
