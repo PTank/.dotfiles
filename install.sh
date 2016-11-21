@@ -1,5 +1,5 @@
 #! /bin/bash
-source $DIR/settings.sh
+source settings.sh
 source $DIR/srcs/packages/main.sh
 DIALOG=${DIALOG=dialog}
 

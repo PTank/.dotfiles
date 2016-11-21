@@ -33,7 +33,7 @@ function gauge_view () {
 	then
 		len=1
 	else
-		len=${packages[@]}
+		len=${#packages[@]}
 	fi
 	let "ratio=100/$len"
 	echo "${packages[@]}"
@@ -53,11 +53,11 @@ function gauge_view () {
 
 function install_packages_standards () {
 	# main function for standard install
-	if [ $UPDATE ]
+	if $UPDATE
 	then
 		update
 	fi
-	if [ $UPGRADE ]
+	if $UPGRADE
 	then
 		upgrade
 	fi
